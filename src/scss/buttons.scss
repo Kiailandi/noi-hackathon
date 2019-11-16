@@ -1,0 +1,11 @@
+@import 'colors';
+
+.btn-grey {
+  background: $black-50;
+  border-radius: 8px;
+  color: $black-400;
+  border: 0;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+}

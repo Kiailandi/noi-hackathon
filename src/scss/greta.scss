@@ -1,0 +1,21 @@
+#greta {
+  padding: 20px;
+  background-color: white;
+  border: 2px solid black;
+  font-size: 30px;
+  font-family: 'Suedtirol';
+  color: #333;
+  text-align: center;
+  .city {
+    color: #97be0e;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  img {
+    max-heigh: 60px;
+    max-width: 60px;
+  }
+}

@@ -1,0 +1,3 @@
+FROM node:11.15-slim
+
+RUN npm i -g lerna http-server

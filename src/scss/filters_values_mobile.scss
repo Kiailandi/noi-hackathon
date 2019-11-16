@@ -1,0 +1,37 @@
+@import 'colors';
+
+.filter_values_mobile {
+  margin-top: 8px;
+  overflow-x: scroll;
+  width: calc(100% + 24px);
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+  }
+
+  .filter_values_mobile__element {
+    height: 40px;
+    position: relative;
+    background-color: $white;
+
+    .filter_values_mobile__element__text {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 96px;
+    }
+
+    .filter_values_mobile__bkg_white_gradient {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 40%, $white 100%);
+    }
+  }
+}

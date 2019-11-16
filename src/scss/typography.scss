@@ -1,0 +1,90 @@
+@import 'colors';
+
+/* Fonts widths */
+$font-size-list: 52, 42, 30, 24, 20, 18, 16, 14, 12;
+@each $fs in $font-size-list {
+  .fs-#{$fs} {
+    font-size: #{$fs}px;
+  }
+}
+
+/* Font weights */
+$font-weight-list: 600, 400, 300;
+@each $fw in $font-weight-list {
+  .fw-#{$fw} {
+    font-weight: $fw;
+  }
+}
+
+/* Colors */
+$colors-list: (
+  blue $blue,
+  green $green,
+  black $black,
+  orange $orange,
+  black-10 $black-10,
+  black-50 $black-50,
+  black-100 $black-100,
+  black-200 $black-200,
+  black-300 $black-300,
+  black-400 $black-400
+);
+@each $color in $colors-list {
+  .color-#{nth($color, 1)} {
+    color: #{nth($color, 2)};
+  }
+}
+
+.color-red--hover:hover {
+  color: $red;
+}
+
+.color-green--hover:hover {
+  color: $green;
+}
+
+/* Backgrounds */
+.bkg-white {
+  background-color: $white;
+}
+.bkg-blue {
+  background-color: #d6e6fe;
+}
+
+/* Font families */
+.ff-sued {
+  font-family: 'Suedtirol', monospace;
+}
+
+/* Icons widths */
+$icon-width-list: 160px, 32px, 24px, 18px, 16px, 14px, 10px;
+@each $w in $icon-width-list {
+  .w-#{$w} {
+    width: #{$w};
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* Borders */
+.border-r-4px {
+  border-radius: 4px;
+}
+.border-r-8px {
+  border-radius: 8px;
+}
+
+/* Positions */
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.text-center {
+  text-align: center;
+}

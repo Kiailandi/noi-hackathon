@@ -1,0 +1,4 @@
+node_modules/
+work/scripts/*
+.vscode
+work/
