@@ -67,8 +67,9 @@ export function render__details_box() {
               <p class="color-black-300 mt-2 fw-300">${this.current_station.address}</p>
               <p class="color-black-300 fw-300">${this.current_station.municipality}</p>
               ${this.render__rating_section()}
+              The station is ${this.distance || '-loading- ' }m away from the hotel. 
               <a
-                href="${`https://www.google.com/maps/dir/${this.station_location.lat},${this.station_location.lng}/${this.current_location.lat},${this.current_location.lng}`}"
+                href="${`https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${this.station_location.lat}%2C${this.station_location.lng}%3B${this.current_location.lat}%2C${this.current_location.lng}`}"
                 target="_blank"
                 class="color-green fs-16 fw-300 mt-2 mb-3 d-block"
               >
@@ -225,6 +226,7 @@ export function render__details_box() {
                     </div>
                   `;
                 })}
+                <h2>CARSHARING</h2>
                 ${this.station_near_carsharing
                   .sort(
                     (a, b) =>
@@ -238,7 +240,7 @@ export function render__details_box() {
                       ])
                   )
                   .map(o => {
-                    console.log('near carsharing', o);
+                    // console.log('near carsharing', o);
                     return html`
                       <div class="element_background d-flex pt-2 pb-2 mt-3">
                         <div
@@ -255,9 +257,18 @@ export function render__details_box() {
                             ${o.sname}
                           </p>
                         </div>
+                        <div class="flex-fill">
+                          <p class="fs-16 mt-1">
+                            ${Math.round(L.latLng([o.scoordinate.y, o.scoordinate.x]).distanceTo([
+                              this.station_location.lat,
+                              this.station_location.lng
+                            ]))}m
+                          </p>
+                        </div>
                       </div>
                     `;
                   })}
+                <h2>BIKESHARING</h2>
                 ${this.station_near_bikesharing
                   .sort(
                     (a, b) =>
@@ -271,7 +282,7 @@ export function render__details_box() {
                       ])
                   )
                   .map(o => {
-                    console.log('near bikesharing', o);
+                    // console.log('near bikesharing', o);
                     return html`
                       <div class="element_background d-flex pt-2 pb-2 mt-3">
                         <div
@@ -286,6 +297,14 @@ export function render__details_box() {
                         <div class="flex-fill">
                           <p class="fs-16 mt-1">
                             ${o.sname}
+                          </p>
+                        </div>
+                        <div class="flex-fill">
+                          <p class="fs-16 mt-1">
+                            ${Math.round(L.latLng([o.scoordinate.y, o.scoordinate.x]).distanceTo([
+                              this.station_location.lat,
+                              this.station_location.lng
+                            ]))}m
                           </p>
                         </div>
                       </div>

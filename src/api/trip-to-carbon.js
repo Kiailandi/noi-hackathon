@@ -19,6 +19,6 @@ export async function request__get_trip_to_carbon(km = 230, carType = 'anyCar') 
   } catch (error) {
     this.carbon_footprint = +'54.63';
   }
-  console.log('carbon footprint', this.carbon_footprint);
+  // console.log('carbon footprint', this.carbon_footprint);
   this.is_loading = false;
 }

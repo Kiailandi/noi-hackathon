@@ -172,7 +172,7 @@ export const t = {
   directions: {
     en: 'Directions',
     de: 'Directions',
-    it: 'Indicazioni stradali per l\'hotel',
+    it: 'Direction for the hotel',
     nl: 'Directions',
     cs: 'Directions',
     pl: 'Directions',

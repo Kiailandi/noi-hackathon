@@ -10,6 +10,7 @@ import {
   request__near_bikesharing
 } from '../api/odh-new';
 import { request__get_trip_to_carbon } from '../api/trip-to-carbon';
+import { request__get_trip_length } from '../api/distance';
 import { TOKEN } from '../config';
 import user__marker from '../icons/user.png';
 import station_marker from '../icons/red_dot.png';
@@ -81,6 +82,7 @@ export class BaseClass extends LitElement {
     this.request__near_carsharing = request__near_carsharing.bind(this);
     this.request__near_bikesharing = request__near_bikesharing.bind(this);
     this.request__get_trip_to_carbon = request__get_trip_to_carbon.bind(this);
+    this.request__get_trip_length = request__get_trip_length.bind(this);
   }
 
   drawUserOnMap() {
@@ -110,12 +112,14 @@ export class BaseClass extends LitElement {
       fillColor: 'rgba(66, 133, 244, 0.5)',
       weight: 1
     });
+    user_circle.bindTooltip('Hotel', { permanent: true, offset: [0, 0] });
     const station_circle = L.circle([this.station_location.lat, this.station_location.lng], {
       radius: this.filters.radius * 1000,
       color: 'rgba(66, 133, 244, 0.6)',
       fillColor: 'rgba(66, 133, 244, 0.5)',
       weight: 1
     });
+    station_circle.bindTooltip('Station', { permanent: true, offset: [0, 0] });
     /**
      * Add to map
      */

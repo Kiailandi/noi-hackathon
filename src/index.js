@@ -55,6 +55,8 @@ class EMobilityMap extends BaseClass {
 
     await this.request__get_trip_to_carbon();
 
+    await this.request__get_trip_length(this.station_location, this.current_location);
+
     this.provider_list = get_provider_list(this.all_stations_details);
 
     /**
@@ -192,13 +194,13 @@ class EMobilityMap extends BaseClass {
 
       return undefined;
     });
-    console.log('energy columns layer', columns_layer_array.length);
+    // console.log('energy columns layer', columns_layer_array.length);
     */
 
     filtered_carsharing_stations_details.map(o => {
       const marker_position = getLatLongFromSharingStationDetail(o);
-      console.log('o', o.sactive, o.savaiable);
-      console.log('car marker_position', marker_position);
+      // console.log('o', o.sactive, o.savaiable);
+      // console.log('car marker_position', marker_position);
       /** Creating the icon */
       const station_icon = L.icon({
         iconUrl: carsharing_stationStatusMapper(o.sactive, o.savailable),
@@ -222,11 +224,11 @@ class EMobilityMap extends BaseClass {
 
       return undefined;
     });
-    console.log('car columns layer', columns_layer_array.length);
+    // console.log('car columns layer', columns_layer_array.length);
 
     filtered_bikesharing_stations_details.map(o => {
       const marker_position = getLatLongFromSharingStationDetail(o);
-      console.log('bike marker_position', marker_position);
+      // console.log('bike marker_position', marker_position);
       /** Creating the icon */
       const station_icon = L.icon({
         iconUrl: bikesharing_stationStatusMapper(o.sactive, o.savaiable),
@@ -250,7 +252,7 @@ class EMobilityMap extends BaseClass {
 
       return undefined;
     });
-    console.log('bike columns layer', columns_layer_array.length);
+    // console.log('bike columns layer', columns_layer_array.length);
 
     await this.request__near_carsharing(this.station_location.lat, this.station_locationlng);
     await this.request__near_bikesharing(this.station_location.lat, this.station_location.lng);

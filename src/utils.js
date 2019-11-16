@@ -39,7 +39,7 @@ export function carsharing_stationStatusMapper(sactive, savaiable) {
   } else {
     val = icon__red_carsharing_marker;
   }
-  console.log('carsharing icon', val);
+  // console.log('carsharing icon', val);
   return val;
 }
 
@@ -55,7 +55,7 @@ export function bikesharing_stationStatusMapper(sactive, savaiable) {
   } else {
     val = icon__red_bikesharing_marker;
   }
-  console.log('bikesharing icon', val);
+  // console.log('bikesharing icon', val);
   return val;
 }
 

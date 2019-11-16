@@ -5,23 +5,23 @@ let touchendY = 0;
 
 function handleGesure(modifiedElement) {
   if (touchendY >= touchstartY) {
-    // console.log('Swiped up');
+    // // console.log('Swiped up');
     modifiedElement.classList.remove('open');
     this.details_mobile_state = false;
   }
   if (touchendY <= touchstartY) {
-    // console.log(swiped + 'down!');
+    // // console.log(swiped + 'down!');
     modifiedElement.classList.add('open');
     this.details_mobile_state = true;
   }
   if (touchendX <= touchstartX) {
-    // console.log('Swiped left');
+    // // console.log('Swiped left');
   }
   if (touchendX >= touchstartX) {
-    // console.log('Swiped right');
+    // // console.log('Swiped right');
   }
   if (touchendY === touchstartY) {
-    // console.log('tap!');
+    // // console.log('tap!');
   }
 }
 
