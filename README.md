@@ -1,11 +1,11 @@
 # Mobility E-Charging Map
 
-This project contains the map web component for the [Green Mobility South Tyrol](https://www.greenmobility.bz.it/) project.
+This project contains the map web component for the [NOI Hackathon BZ](http://hackathon.bz.it) project from team "Stonks".
 
 ## Why
 
-[Greenmobility](https://www.greenmobility.bz.it/it/) wants to split the existing functionalities of the website into reusable and independent components. Using these webcomponents, a developer can easily integrate the functionality of the single components into any website.
-The data source for the components is the [Open Data Hub](https://opendatahub.bz.it/) project.
+We wanted to create a reusable and independent component. Using this webcomponent, a developer can easily integrate it into any website.
+The main data sources for the components are from the [Open Data Hub](https://opendatahub.bz.it/) project.
 
 ## Choices
 
@@ -61,20 +61,6 @@ This will serve the "work in progress" website at [http://0.0.0.0:8000/](http://
 To deploy the webcomponents, take the production bundle created with the `yarn build` command and use it as a normal javascrip script.
 
 We suggest deploying them on a CDN, rather than hardcoding them inside a project, so that future fixes and enhancements of the webcomponents are more easily distributed.
-
-## Running the tests
-
-TODO
-
-### Break down into end to end tests
-
-TODO
-
-### And coding style tests
-
-TODO
-
-## Contributing
 
 See ![CONTRIBUTING.md](CONTRIBUTING.md)
 
